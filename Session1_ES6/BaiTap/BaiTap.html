@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Tính tổng bằng reduce
+      let sum = [1, 5, 3, 4, 5, 6, 7, 8, 5, 5, 6, 9, 11, 17, 2];
+
+      function calculateReduce(sum) {
+        let calculate = sum.reduce((accumulater, currentValue) => {
+          return accumulater + currentValue;
+        });
+        return calculate;
+      }
+
+      let resultCalculate = calculateReduce(sum);
+      console.log("calculate", resultCalculate);
+
+      // Tính tổng bằng forEach
+
+      let sum1 = 0;
+      function calculateForeach(sum) {
+        let calculate = sum.forEach((item) => {
+          sum1 += item;
+        });
+      }
+      calculateForeach(sum);
+      console.log("calculateForeach", sum1);
+
+      // Kiểm tra độ dài từng phần tử trong mảng
+      let inputStrings = ["Hello", "World", "JavaScript"];
+
+      function stringLengths(strings) {
+        let newArr = strings.map((str) => {
+          return str.length;
+        });
+        return newArr;
+      }
+
+      let resultLenghths = stringLengths(inputStrings);
+
+      console.log("inputStrings", inputStrings);
+      console.log("resultLenghths", resultLenghths);
+
+      //Tìm số đầu tiên trong mảng
+      function findFirstEvent(findArr) {
+        let find = findArr.find((item) => {
+          return item % 2 == 0;
+        });
+        return find;
+      }
+
+      let resultFind = findFirstEvent(sum);
+      console.log("resultFind", resultFind);
+
+      // Cập nhật giá trị các phần tử trong mảng
+      function filterEvenNumber(even) {
+        let filterEven = even.filter((item) => {
+          return item % 2 == 0;
+        });
+        return filterEven;
+      }
+
+      let resultFilter = filterEvenNumber(sum);
+      console.log("resultFilter", resultFilter);
+
+      //Tìm giá trị lớn nhất trong mảng
+      function findLargestNumber(large) {
+        let findMax = large.reduce((total, item) => {
+          return item > total ? item : total;
+        }, large[0]);
+        return findMax;
+      }
+
+      let resultFindLarges = findLargestNumber(sum);
+
+      console.log("findLargestNumber", resultFindLarges);
+
+      // Tìm phần tử tồn tại trong mảng
+      function checkIfElementExists(check, number) {
+        let elementExists = check.includes(number);
+        return elementExists;
+      }
+
+      let resultExists = checkIfElementExists(sum, 10);
+      console.log("resultExists", resultExists);
+
+      // Tính tổng các số trong mảng
+      function isPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function caculateSumOfPrimes(sum) {
+        let prime = sum.filter(isPrime);
+        console.log("prime", prime);
+        let calculate = prime.reduce((accumulater, item) => {
+          return accumulater + item;
+        });
+        return calculate;
+      }
+
+      let resultCalculateSum = caculateSumOfPrimes(sum);
+      console.log("resultCalculateSum", resultCalculateSum);
+
+      let staff = [
+        { salary: 100 },
+        { salary: 105 },
+        { salary: 101 },
+        { salary: 102 },
+        { salary: 103 },
+      ];
+
+      //Tính tổng lương
+      function caculateTotalSalary(sum) {
+        let salaryObj = sum.map((item) => {
+          return item.salary;
+        });
+        console.log("salaryObj", salaryObj);
+        let calculate = salaryObj.reduce((accumulater, item) => {
+          return accumulater + item;
+        });
+        return calculate;
+      }
+
+      let resultCalculateSalary = caculateTotalSalary(staff);
+      console.log("resultCalculateSalary", resultCalculateSalary);
+
+      // Trả về một mảng bình phương các số trong mảng
+
+      function squareNumber(square) {
+        let number = square.map((item) => {
+          return item * item;
+        });
+
+        return number;
+      }
+
+      let resultSquareNumber = squareNumber(sum);
+      console.log("resultSquareNumber", resultSquareNumber);
+    </script>
+  </body>
+</html>
